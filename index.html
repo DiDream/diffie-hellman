@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/styles.css" attr>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" attr>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/6.0.0/normalize.css" attr>
+  </head>
+  <body>
+    <div class="container">
+      <form action="#" method="" onsubmit="calculateKeys()">
+        <div class="content">
+          <section class="person" id="person-A">
+            <div class="person-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+            <div class="diffie-hellman">
+              <div class="x-key">
+                <input class="box input-box" type="text" placeholder="Xᵃ" id="xa-key" pattern="[0-9]+" required="true">
+              </div>
+              <div class="y-key">
+                <div class="box">Yᵃ</div>
+              </div>
+            </div>
+          </section>
+          <section class="person" id="person-B">
+            <div class="person-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+            <div class="diffie-hellman">
+              <div class="x-key">
+                <input class="box input-box" type="text" placeholder="Xᵇ" id="xa-key" pattern="[0-9]+" required="true">
+              </div>
+              <div class="y-key">
+                <div class="box">Yᵇ</div>
+              </div>
+            </div>
+          </section>
+          <div class="alpha-primo">
+            <input class="box input-box" type="text" placeholder="α" id="alpha-input" pattern="[0-9]+" required="true">
+            <input class="box input-box" type="text" placeholder="P" id="prime-input" pattern="[0-9]+" required="true">
+          </div>
+        </div>
+        <input type="submit" value="CREAR CLAVES">
+      </form>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>

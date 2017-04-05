@@ -1,0 +1,35 @@
+doctype html
+html(lang='es')
+    head
+        meta(charset='utf-8')
+        title
+        link(rel="stylesheet", href="css/styles.css", attr)
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", attr)
+        link(rel="stylesheet", href="https://necolas.github.io/normalize.css/6.0.0/normalize.css", attr)
+    body
+        .container
+            form(action="#" method="" onsubmit="calculateKeys()")
+                .content
+                    section#person-A.person
+                        .person-icon
+                            i(class="fa fa-user" aria-hidden="true")
+                        .diffie-hellman
+                            .x-key
+                                input(type="text" placeholder!="Xᵃ" class="box input-box" id="xa-key" pattern="[0-9]+" required="true")
+                            .y-key
+                                .box Yᵃ
+                    section#person-B.person
+                        .person-icon
+                            i(class="fa fa-user" aria-hidden="true")
+                        .diffie-hellman
+                            .x-key
+                                input(type="text" placeholder!="Xᵇ" class="box input-box" id="xa-key" pattern="[0-9]+" required="true")
+                            .y-key
+                                .box Yᵇ
+                    .alpha-primo
+                        input(type="text" placeholder="\u03B1" class="box input-box" id="alpha-input" pattern="[0-9]+" required="true")
+                        input(type="text" placeholder="P" class="box input-box" id="prime-input" pattern="[0-9]+" required="true")
+                input(type="submit" value="CREAR CLAVES" )
+                
+        script(src="js/main.js")
+      

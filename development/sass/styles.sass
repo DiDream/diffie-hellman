@@ -1,0 +1,70 @@
+body
+    margin: 0px
+    padding: 0px
+.container
+    width: 600px
+    margin: 0 auto
+    background-color: #DADADA
+.content
+    position: relative
+.person
+    box-sizing: border-box
+    width: 300px
+    float: left
+    padding: 20px
+    text-align: center
+    &#person-A
+        color: #444
+    &#person-B
+        color: orange
+    .person-icon
+        text-align: center
+        font-size: 75px
+    .x-key
+        display: block
+
+.alpha-primo
+    position: absolute
+    left: 0
+    right: 0
+    width: 50px
+    height: 100px
+    margin: 20px auto 0px
+form
+    display: inline-block
+.box
+    width: 40px
+    height: 40px
+    box-sizing: border-box
+    font-size: 30px
+    margin: 5px
+    text-align: center
+    background-color: #FAFAFA
+    line-height: 40px
+    display: inline-block
+.input-box
+    border: 2px solid transparent
+    animation: input 1s alternate infinite
+    &:focus::-moz-placeholder
+        opacity: .4
+    &:focus::-webkit-input-placeholder
+        opacity: .4
+    &::-webkit-input-placeholder
+        color: #444
+        opacity: 1
+    &::-moz-placeholder
+        color: #444
+        opacity: 1
+@keyframes input
+    to
+        border-color: #fff
+    from
+        border-color: rgba(teal,.4)
+input[type="submit"]
+    background: teal
+    padding: 10px 30px
+    font-size: 12px
+    color: #fff
+    border: 0px
+    cursor: pointer
+    display: inline-block
