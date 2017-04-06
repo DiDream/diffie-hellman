@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="container">
-      <form action="#" method="" onsubmit="calculateKeys()">
+      <form action="#" method="" onsubmit="calculateKeys(event)">
         <div class="content">
           <section class="person" id="person-A">
             <div class="person-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
@@ -26,7 +26,7 @@
             <div class="person-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
             <div class="diffie-hellman">
               <div class="x-key">
-                <input class="box input-box" type="text" placeholder="Xᵇ" id="xa-key" pattern="[0-9]+" required="true">
+                <input class="box input-box" type="text" placeholder="Xᵇ" id="xb-key" pattern="[0-9]+" required="true">
               </div>
               <div class="y-key">
                 <div class="box">Yᵇ</div>
@@ -34,13 +34,15 @@
             </div>
           </section>
           <div class="alpha-primo">
-            <input class="box input-box" type="text" placeholder="α" id="alpha-input" pattern="[0-9]+" required="true">
-            <input class="box input-box" type="text" placeholder="P" id="prime-input" pattern="[0-9]+" required="true">
+            <input class="box input-box" type="text" placeholder="α" id="alpha" pattern="[0-9]+" required="true">
+            <input class="box input-box" type="text" placeholder="P" id="prime" pattern="[0-9]+" required="true">
           </div>
         </div>
         <input type="submit" value="CREAR CLAVES">
       </form>
     </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/diffie-hellman.js">   </script>
     <script src="js/main.js"></script>
   </body>
 </html>

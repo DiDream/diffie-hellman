@@ -8,7 +8,7 @@ html(lang='es')
         link(rel="stylesheet", href="https://necolas.github.io/normalize.css/6.0.0/normalize.css", attr)
     body
         .container
-            form(action="#" method="" onsubmit="calculateKeys()")
+            form(action="#" method="" onsubmit="calculateKeys(event)")
                 .content
                     section#person-A.person
                         .person-icon
@@ -23,13 +23,16 @@ html(lang='es')
                             i(class="fa fa-user" aria-hidden="true")
                         .diffie-hellman
                             .x-key
-                                input(type="text" placeholder!="Xᵇ" class="box input-box" id="xa-key" pattern="[0-9]+" required="true")
+                                input(type="text" placeholder!="Xᵇ" class="box input-box" id="xb-key" pattern="[0-9]+" required="true")
                             .y-key
                                 .box Yᵇ
                     .alpha-primo
-                        input(type="text" placeholder="\u03B1" class="box input-box" id="alpha-input" pattern="[0-9]+" required="true")
-                        input(type="text" placeholder="P" class="box input-box" id="prime-input" pattern="[0-9]+" required="true")
+                        input(type="text" placeholder="\u03B1" class="box input-box" id="alpha" pattern="[0-9]+" required="true")
+                        input(type="text" placeholder="P" class="box input-box" id="prime" pattern="[0-9]+" required="true")
                 input(type="submit" value="CREAR CLAVES" )
-                
+        script(src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous")
+        script(src="js/diffie-hellman.js")    
         script(src="js/main.js")
       
