@@ -1,28 +1,38 @@
 Number.prototype.isOdd= function(){
     return this%2 != 0;
 }
-function fastExponentiation(base, exp, m){
-    console.log(base, exp, m);
+Array.prototype.last = function(){
+    return this[this.length -1];
+}
+function fastExponentiation(base, b, m){
+    console.log(base,b,m);
     var x = 1;
     var y = base%m;
-    while(exp>0 && y>1){
+    var result = [];
+    result.push({y,b,x})
+    while(b>0 && y>1){
 
-        if(exp.isOdd()){
+        if(b.isOdd()){
             x = (x*y)% m;
-            exp--;
+            b--;
+            result.push({y:'',b,x})
         }else {
             y= (y*y)%m;
-            exp/=2;
+            b/=2;
+            result.push({y,b,x:''})
         }
+
     }
-    return x;
+    result.push(x); //El resultado final estara al final del array que se retorne
+    return result;
 }
 
 class DiffieHellman {
     static calculate(prime,alpha,xa, xb){
         var ya = fastExponentiation(alpha,xa,prime),
             yb = fastExponentiation(alpha,xb,prime),
-            k = fastExponentiation(ya,xb,prime);
-        return {ya,yb,k }
+            ka = fastExponentiation(yb.last() ,xa,prime),
+            kb = fastExponentiation(ya.last() ,xb,prime);
+        return {ya,yb,ka,kb}
     }
 }

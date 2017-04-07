@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/6.0.0/normalize.css" attr>
   </head>
   <body>
+    <div class="modal">
+      <div class="modal-box">
+        <div class="modal-close"><i class="fa fa-times-circle-o" aria-hidden="true"></i></div>
+        <div class="operations" id="ya-operations"></div>
+        <div class="operations" id="yb-operations"></div>
+        <div class="operations" id="ka-operations"></div>
+        <div class="operations" id="kb-operations"></div>
+      </div>
+    </div>
     <div class="container">
       <form action="#" method="" onsubmit="calculateKeys(event)">
         <div class="content">
@@ -18,7 +27,10 @@
                 <input class="box input-box" type="text" placeholder="Xᵃ" id="xa-key" pattern="[0-9]+" required="true">
               </div>
               <div class="y-key">
-                <div class="box">Yᵃ</div>
+                <div class="box box-result" id="ya-value">Yᵃ</div>
+              </div>
+              <div class="k-key">
+                <div class="box box-result" id="ka-value">Kᵃ</div>
               </div>
             </div>
           </section>
@@ -29,7 +41,10 @@
                 <input class="box input-box" type="text" placeholder="Xᵇ" id="xb-key" pattern="[0-9]+" required="true">
               </div>
               <div class="y-key">
-                <div class="box">Yᵇ</div>
+                <div class="box box-result" id="yb-value">Yᵇ</div>
+              </div>
+              <div class="k-key">
+                <div class="box box-result" id="kb-value">Kᵇ</div>
               </div>
             </div>
           </section>
@@ -42,6 +57,7 @@
       </form>
     </div>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/table.js"></script>
     <script src="js/diffie-hellman.js">   </script>
     <script src="js/main.js"></script>
   </body>
