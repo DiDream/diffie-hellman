@@ -1,4 +1,4 @@
-function operationsDiffieHelmman(op){
+function operationsDiffieHellman(op){
     var result =
     `<table>
         <thead>

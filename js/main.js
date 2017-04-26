@@ -17,11 +17,20 @@ function calculateKeys(e){
     var alpha = Number($('#alpha').val() );
     var prime = Number($('#prime').val() );
 
-    var operations = DiffieHellman.calculate(prime,alpha,xa,xb);
-
-    $('.operations').each(function(){
-        var key = $(this).attr('id').split('-')[0];
-        $(this).html( operationsDiffieHelmman(operations[key].slice(0,-1)) );
-        $(`#${key}-value`).text(operations[key].last());
+    var dh = new DiffieHellman({
+        alpha,
+        prime,
+        xs: [xa,xb]
     });
+    var operations = dh.output;
+    console.log(operations);
+
+    //Imprimir valores Y y K no zs
+    for(var i=0; i<2; i++){
+        $(`#y${i}-operations`).html( operationsDiffieHellman(operations.ys[i].logs));
+        $(`#k${i}-operations`).html( operationsDiffieHellman(operations.ks[i].logs));
+        $(`#y${i}-value`).text(operations.ys[i].value);
+        $(`#k${i}-value`).text(operations.ks[i].value);
+    }
+
 }
