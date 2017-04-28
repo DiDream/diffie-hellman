@@ -40,18 +40,31 @@ body.modal-open {
         cursor: pointer; }
 
 .container {
-  width: 600px;
+  max-width: 1000px;
   margin: 0 auto;
   background-color: #DADADA; }
 
-.content {
-  position: relative; }
+.input-field {
+  margin: 10px;
+  display: inline-block;
+  min-width: 125px; }
+  .input-field label {
+    margin: 5px 0px;
+    display: block;
+    font-size: 11px; }
+
+.data-parties {
+  text-align: center; }
+
+#parties {
+  display: inline-block; }
 
 .person {
+  background-color: teal;
   box-sizing: border-box;
-  width: 300px;
+  margin: 10px;
   float: left;
-  padding: 20px;
+  padding: 10px;
   text-align: center; }
   .person#person-A {
     color: #444; }
@@ -59,27 +72,40 @@ body.modal-open {
     color: orange; }
   .person .person-icon {
     text-align: center;
-    font-size: 75px; }
+    font-size: 50px; }
   .person .x-key {
     display: block; }
+  .person .key {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 5px; }
+    .person .key .symbol {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-origin: 100% 100%;
+      transition: all ease-in-out 1s; }
+      .person .key .symbol .base {
+        font-size: 30px;
+        line-height: 40px; }
+      .person .key .symbol.sub {
+        transform: scale(0.4); }
 
-.alpha-primo {
-  position: absolute;
-  left: 0;
-  right: 0;
-  width: 50px;
-  height: 100px;
-  margin: 20px auto 0px; }
+.singular-data {
+  text-align: center; }
 
-form {
+.required-data {
   display: inline-block; }
+
+.symbol {
+  pointer-events: none; }
 
 .box {
   width: 40px;
   height: 40px;
   box-sizing: border-box;
   font-size: 30px;
-  margin: 5px;
   text-align: center;
   background-color: #FAFAFA;
   line-height: 40px;
@@ -87,19 +113,12 @@ form {
   .box.box-result {
     cursor: pointer; }
 
+input[type="number"].input-box {
+  width: 80px; }
+
 .input-box {
   border: 2px solid transparent;
   animation: input 1s alternate infinite; }
-  .input-box:focus::-moz-placeholder {
-    opacity: .4; }
-  .input-box:focus::-webkit-input-placeholder {
-    opacity: .4; }
-  .input-box::-webkit-input-placeholder {
-    color: #444;
-    opacity: 1; }
-  .input-box::-moz-placeholder {
-    color: #444;
-    opacity: 1; }
 
 @keyframes input {
   to {

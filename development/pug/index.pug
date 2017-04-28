@@ -11,38 +11,29 @@ html(lang='es')
             .modal-box
                 .modal-close
                     i(class="fa fa-times-circle-o" aria-hidden="true")
-                .operations#y0-operations
-                .operations#y1-operations
-                .operations#k0-operations
-                .operations#k1-operations
+                .key-operations
+                    .operations#y0-operations
+                    .operations#y1-operations
+                    .operations#k0-operations
+                    .operations#k1-operations
 
         .container
-            form(action="#" method="" onsubmit="calculateKeys(event)")
-                .content
-                    section#person-A.person
-                        .person-icon
-                            i(class="fa fa-user" aria-hidden="true")
-                        .diffie-hellman
-                            .x-key
-                                input(type="text" placeholder!="Xᵃ" class="box input-box" id="xa-key" pattern="[0-9]+" required="true" value="11")
-                            .y-key
-                                .box.box-result#y0-value Yᵃ
-                            .k-key
-                                .box.box-result#k0-value Kᵃ
-                    section#person-B.person
-                        .person-icon
-                            i(class="fa fa-user" aria-hidden="true")
-                        .diffie-hellman
-                            .x-key
-                                input(type="text" placeholder!="Xᵇ" class="box input-box" id="xb-key" pattern="[0-9]+" required="true" value="22")
-                            .y-key
-                                .box.box-result#y1-value Yᵇ
-                            .k-key
-                                .box.box-result#k1-value Kᵇ
-                    .alpha-primo
-                        input(type="text" placeholder="\u03B1" class="box input-box" id="alpha" pattern="[0-9]+" required="true" value="5")
-                        input(type="text" placeholder="P" class="box input-box" id="prime" pattern="[0-9]+" required="true" value="17")
-                input(type="submit" value="CREAR CLAVES" )
+            .singular-data
+                .input-field
+                    label Nº DE PARTICIPANTES
+                    input(type="number" min="2" max="10" value="2" id="parties-number" class="box input-box")
+                .input-field
+                    label ALFA
+                    input(type="text" placeholder="\u03B1" class="box input-box" id="alpha" pattern="[0-9]+" required="true" value="5")
+                .input-field
+                    label MODULO
+                    input(type="text" placeholder="P" class="box input-box" id="prime" pattern="[0-9]+" required="true" value="17")
+            
+            form(action="#" method="" onsubmit="calculateKeys(event)" class="data-parties")
+                #parties
+            
+                div
+                    input(type="submit" value="CREAR CLAVES" )
         script(src="https://code.jquery.com/jquery-2.2.4.min.js"
             integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
             crossorigin="anonymous")

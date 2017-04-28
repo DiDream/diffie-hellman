@@ -40,16 +40,28 @@ body.modal-open
                 cursor: pointer
 
 .container
-    width: 600px
+    max-width: 1000px
     margin: 0 auto
     background-color: #DADADA
-.content
-    position: relative
+.input-field
+    margin: 10px
+    display: inline-block
+    min-width: 125px
+    label
+        margin: 5px 0px
+        display: block
+        font-size: 11px
+.data-parties
+    text-align: center
+#parties
+    display: inline-block
+
 .person
+    background-color: teal
     box-sizing: border-box
-    width: 300px
+    margin: 10px
     float: left
-    padding: 20px
+    padding: 10px
     text-align: center
     &#person-A
         color: #444
@@ -57,44 +69,60 @@ body.modal-open
         color: orange
     .person-icon
         text-align: center
-        font-size: 75px
+        font-size: 50px
     .x-key
         display: block
-
-.alpha-primo
-    position: absolute
-    left: 0
-    right: 0
-    width: 50px
-    height: 100px
-    margin: 20px auto 0px
-form
+    .key
+        position: relative
+        width: 40px
+        height: 40px
+        margin: 5px
+        .symbol
+            position: absolute
+            width: 100%
+            height: 100%
+            transform-origin: 100% 100%
+            transition: all ease-in-out 1s
+            .base
+                font-size: 30px
+                line-height: 40px
+            &.sub
+                transform: scale(.4)
+.singular-data
+    text-align: center
+.required-data
     display: inline-block
+.symbol
+    pointer-events: none
 .box
     width: 40px
     height: 40px
     box-sizing: border-box
     font-size: 30px
-    margin: 5px
+
     text-align: center
     background-color: #FAFAFA
     line-height: 40px
     display: inline-block
     &.box-result
         cursor: pointer
+input[type="number"].input-box
+    width: 80px
+
 .input-box
     border: 2px solid transparent
     animation: input 1s alternate infinite
-    &:focus::-moz-placeholder
-        opacity: .4
-    &:focus::-webkit-input-placeholder
-        opacity: .4
-    &::-webkit-input-placeholder
-        color: #444
-        opacity: 1
-    &::-moz-placeholder
-        color: #444
-        opacity: 1
+    //
+        &:focus::-moz-placeholder
+            opacity: .4
+        &:focus::-webkit-input-placeholder
+            opacity: .4
+        &::-webkit-input-placeholder
+            color: #444
+            opacity: 1
+        &::-moz-placeholder
+            color: #444
+            opacity: 1
 @keyframes input
     to
         border-color: #fff

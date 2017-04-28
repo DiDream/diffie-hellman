@@ -11,49 +11,34 @@
     <div class="modal">
       <div class="modal-box">
         <div class="modal-close"><i class="fa fa-times-circle-o" aria-hidden="true"></i></div>
-        <div class="operations" id="y0-operations"></div>
-        <div class="operations" id="y1-operations"></div>
-        <div class="operations" id="k0-operations"></div>
-        <div class="operations" id="k1-operations"></div>
+        <div class="key-operations">
+          <div class="operations" id="y0-operations"></div>
+          <div class="operations" id="y1-operations"></div>
+          <div class="operations" id="k0-operations"></div>
+          <div class="operations" id="k1-operations"></div>
+        </div>
       </div>
     </div>
     <div class="container">
-      <form action="#" method="" onsubmit="calculateKeys(event)">
-        <div class="content">
-          <section class="person" id="person-A">
-            <div class="person-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
-            <div class="diffie-hellman">
-              <div class="x-key">
-                <input class="box input-box" type="text" placeholder="Xᵃ" id="xa-key" pattern="[0-9]+" required="true" value="11">
-              </div>
-              <div class="y-key">
-                <div class="box box-result" id="y0-value">Yᵃ</div>
-              </div>
-              <div class="k-key">
-                <div class="box box-result" id="k0-value">Kᵃ</div>
-              </div>
-            </div>
-          </section>
-          <section class="person" id="person-B">
-            <div class="person-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
-            <div class="diffie-hellman">
-              <div class="x-key">
-                <input class="box input-box" type="text" placeholder="Xᵇ" id="xb-key" pattern="[0-9]+" required="true" value="22">
-              </div>
-              <div class="y-key">
-                <div class="box box-result" id="y1-value">Yᵇ</div>
-              </div>
-              <div class="k-key">
-                <div class="box box-result" id="k1-value">Kᵇ</div>
-              </div>
-            </div>
-          </section>
-          <div class="alpha-primo">
-            <input class="box input-box" type="text" placeholder="α" id="alpha" pattern="[0-9]+" required="true" value="5">
-            <input class="box input-box" type="text" placeholder="P" id="prime" pattern="[0-9]+" required="true" value="17">
-          </div>
+      <div class="singular-data">
+        <div class="input-field">
+          <label>Nº DE PARTICIPANTES</label>
+          <input class="box input-box" type="number" min="2" max="10" value="2" id="parties-number">
         </div>
-        <input type="submit" value="CREAR CLAVES">
+        <div class="input-field">
+          <label>ALFA</label>
+          <input class="box input-box" type="text" placeholder="α" id="alpha" pattern="[0-9]+" required="true" value="5">
+        </div>
+        <div class="input-field">
+          <label>MODULO</label>
+          <input class="box input-box" type="text" placeholder="P" id="prime" pattern="[0-9]+" required="true" value="17">
+        </div>
+      </div>
+      <form class="data-parties" action="#" method="" onsubmit="calculateKeys(event)">
+        <div id="parties"></div>
+        <div>
+          <input type="submit" value="CREAR CLAVES">
+        </div>
       </form>
     </div>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
