@@ -41,13 +41,11 @@ class DiffieHellman {
         this.alpha = val.alpha;
         this.prime = val.prime;
         var ys = new Array(this.parties);
-        var alpha = val.alpha;
-        var prime = val.prime;
 
 
     // Calcular valores Y
         for(var i=0; i<this.parties; i++){
-            ys[i] = fastExponentiation(alpha, this.xs[i],prime);
+            ys[i] = fastExponentiation(this.alpha, this.xs[i],this.prime);
         }
 
     //Calcular valores intermedios Z (si se puede)
