@@ -33,6 +33,15 @@ function generatePersons(n){
         partiesHTML.append(addPerson(i));
     }
 }
+function addResultKey(key, subIndex,i){
+
+    return `<div class="key ${key}-key key-result">
+                <div class="symbol">
+                    <span class="base">${key.toUpperCase()}</span><span clas="sub">${subIndex}</span>
+                </div>
+                <div class="box box-result" id="${key}${i}-value"></div>
+            </div>`;
+}
 function addPerson(i){
     return `<section class="person" id="person-${i}">
                 <div class="person-icon">
@@ -45,18 +54,8 @@ function addPerson(i){
                     </div>
                     <input class="box input-box" type="text" id="x${i}-key" pattern="[0-9]+" required="true">
                   </div>
-                  <div class="key y-key key-result">
-                    <div class="symbol">
-                        <span class="base">Y</span><span clas="sub">${ALFABETO[i]}</span>
-                    </div>
-                    <div class="box box-result" id="y${i}-value"></div>
-                  </div>
-                  <div class="key k-key key-result">
-                    <div class="symbol">
-                        <span class="base">K</span><span clas="sub">${ALFABETO[i]}</span>
-                    </div>
-                    <div class="box box-result" id="k${i}-value"></div>
-                  </div>
+                  ${addResultKey('y',ALFABETO[i],i)}
+                  ${addResultKey('k',ALFABETO[i],i)}
                 </div>
             </section>`;
 }
@@ -77,7 +76,7 @@ function calculateKeys(e){
 
     // Imprimir resultados
     // Para ver las operaciones hacer click en el cuadro del valor de la clave
-        // correspondiente, y se abrira en popup  
+        // correspondiente, y se abrira en popup
     $('.key-result').find('.symbol').addClass('sub');
     $('.key-operations').html('');
     for(var i=0; i<xs.length; i++){
